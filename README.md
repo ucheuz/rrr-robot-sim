@@ -1,22 +1,22 @@
 # RRR Robot Tracking & Obstacle Avoidance
 
-This project simulates a 3-joint planar robot arm (RRR manipulator) tracking a moving target in 2D space. It includes obstacle avoidance capabilities and compares performance across different control and update frequencies.
+This project simulates a 3-joint planar robotic arm (RRR manipulator) that follows a moving target in 2D space. It includes obstacle avoidance features and compares performance across different control and update frequencies.
 
 ---
 
 ## Project Overview
 
-The robot follows a moving target along a sine wave path. Joint angles are calculated using inverse kinematics (IK), and movement is visualised using Matplotlib. There are three modes you can run:
+The robot tracks a target following a sine wave trajectory. Joint angles are calculated using inverse kinematics (IK), and the motion is visualised with Matplotlib. The system runs in three different modes:
 
 - **Task A**: High-frequency control (1kHz) with fast target updates (30Hz)
 - **Task B**: Lower control (50Hz) with slower updates (5Hz)
-- **Obstacle Avoidance**: Robot detects and avoids a red circular obstacle (or freezes)
+- **Obstacle Avoidance**: Robot detects and avoids a static circular obstacle, rerouting or freezing if needed
 
 ---
 
 ## How to Set Up and Run
 
-### 1. Clone the repo (or download the files)
+### 1. Clone the repository (or download the files)
 ```bash
 git clone https://github.com/ucheuz/rrr-robot-sim.git
 cd rrr-robot-sim
@@ -39,7 +39,7 @@ pip install -r requirements.txt
 pip install numpy matplotlib
 ```
 
-### 4. Install ffmpeg (for saving .mp4)
+### 4. Install ffmpeg (for saving .mp4 animations)
 ```bash
 brew install ffmpeg    # macOS
 # or use apt / choco depending on your OS
@@ -48,7 +48,7 @@ sudo apt install ffmpeg -y
 ```
 
 ### 5. Run the Simulation
-Open `main.py` and choose the mode at the top:
+Edit the top of main.py to select the mode:
 ```python
 MODE = "task_a"       # Options: "task_a", "task_b", "obstacle"
 ```
@@ -132,6 +132,8 @@ Lower frequencies reduce smoothness but still maintain good tracking performance
 - **Final tracking error**: `0.1339`
 - **Animation**: `robot_tracking_obstacle.mp4`
 
+**Observation**:  
+The robot almost always avoids the obstacle using rerouting or freezing, with a few trailing end effector lines. Path gaps and violation markers provide visual feedback of avoidance behaviour.
 ---
 
 ## Author
