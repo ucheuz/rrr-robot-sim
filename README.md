@@ -60,14 +60,15 @@ python main.py
 
 ---
 
-## How It Works
+## Description of My Approach
+The core idea was to simulate a 3-link planar robotic arm (RRR configuration) that tracks a moving target in 2D space, with a particular focus on accurate kinematic control and basic obstacle avoidance.
 
-- **Inverse Kinematics** (IK): Solved via gradient descent to minimise Euclidean distance from end-effector (EE) to the target.
-- **Forward Kinematics** (FK): Uses vector sums from joint angles.
-- **Obstacle Avoidance**:
-  - Checks if the EE would enter the red circular zone.
-  - If so, it tries a rerouted position away from the obstacle.
-  - If rerouting fails, the robot freezes for that frame (visually shown as a break in the path).
+- **Forward Kinematics** (FK): Implemented using trigonometric relationships derived from the joint angles and link lengths. Each link’s position builds on the previous one
+- **Inverse Kinematics** (IK): Solved numerically using gradient descent. I didn’t use closed-form solutions since the robot must constantly adapt to a dynamic target. Instead, the algorithm minimises the Euclidean distance between the end-effector and the target point. I used finite differences to estimate the gradient of the loss function with respect to each joint angle..
+
+- **Obstacle Avoidance**: A static circular obstacle is placed near the tracking path. Before accepting a new movement, the system checks whether the end-effector would enter the obstacle region. If it does, the algorithm attempts to reroute the target slightly away from the obstacle in the opposite direction. If the reroute still leads to a violation, the robot simply holds its last safe position for that frame. This is a practical fallback I chose to avoid jittery or erratic movements near the boundary
+- **Path Logging & Visualisation**: To reflect failed movements, I introduce NaN entries into the logged end-effector path so that the animation shows a visual break in the blue tracking line. I also added magenta dots to highlight any violation attempts, allowing me to analyse weak points in the algorithm visually.
+  
 - **Animation**: Displays arm joints, EE, target, obstacles, and violations.
 
 ---
