@@ -124,7 +124,8 @@ Lower frequencies reduce smoothness but still maintain good tracking performance
 - **Final tracking error**: `0.1339`
 - **Animation**: `robot_tracking_obstacle.mp4`
 
-  
+---
+
 ## Author
 
 **Uchemudi Uzoka**  
