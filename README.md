@@ -118,7 +118,13 @@ With slower updates, movement appears more jumpy. The robot lags slightly behind
 Lower frequencies reduce smoothness but still maintain good tracking performance.
 
 ---
+### Obstacle Task
+- **Control loop**: 1 kHz  
+- **Target updates**: 30 Hz
+- **Final tracking error**: `0.1339`
+- **Animation**: `robot_tracking_obstacle.mp4`
 
+  
 ## Author
 
 **Uchemudi Uzoka**  
