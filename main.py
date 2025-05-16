@@ -6,7 +6,7 @@ from visualise import animate_tracking
 
 # ========== CONFIGURATION ==========
 # Choose the simulation mode: 'task_a', 'task_b', or 'obstacle'
-MODE = "task_b"
+MODE = "task_a"
 
 L = 1.0  # # Length of each robot arm link
 theta = np.zeros(3)  # Initial joint angles (3-DOF planar arm)
