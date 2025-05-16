@@ -3,9 +3,19 @@ import matplotlib.animation as animation
 import numpy as np
 from matplotlib.patches import Circle
 
-# Animate RRR robot tracking a moving target over time
 def animate_tracking(ee_path, target_path, theta_history, L=1.0, interval=10, save=False, filename="robot_tracking.mp4", show_obstacle=True):
+#     Animate the RRR robot tracking a moving target over time.
 
+#     Parameters:
+#     - ee_path: List of 2D points of end-effector positions.
+#     - target_path: List of 2D target positions.
+#     - theta_history: List of joint angle arrays at each timestep.
+#     - L: Length of each arm segment.
+#     - interval: Time between animation frames in milliseconds.
+#     - save: If True, saves the animation to MP4.
+#     - filename: Output filename if saving.
+#     - show_obstacle: If True, renders the obstacle region.
+    
     # Given joint angles, compute the positions of each joint and end-effector
     def get_joint_positions(theta, L):
         theta1, theta2, theta3 = theta
