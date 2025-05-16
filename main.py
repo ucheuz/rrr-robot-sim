@@ -47,7 +47,7 @@ current_target = target_trajectory(0, L) # Starting target position
 
 # Initial safety check for obstacle mode
 if MODE == "obstacle" and in_obstacle(forward_kinematics(theta, L), L, margin=OBSTACLE_MARGIN):
-    print("⚠️ Initial position inside obstacle — adjusting")
+    print("Initial position inside obstacle — adjusting")
     theta += np.random.uniform(-0.2, 0.2, size=3)
 
 # ========== MAIN SIMULATION LOOP ==========
@@ -68,7 +68,7 @@ while time_elapsed < total_time:
 
     # Obstacle avoidance logic (only in "obstacle" mode)
     if MODE == "obstacle" and in_obstacle(proposed_ee_pos, L):
-        print(f"⚠️ Obstacle detected at t={time_elapsed:.2f}s — rerouting.")
+        print(f"Obstacle detected at t={time_elapsed:.2f}s — rerouting.")
         obstacle_hits += 1
         obstacle_positions.append(proposed_ee_pos.copy())
 
@@ -102,7 +102,7 @@ while time_elapsed < total_time:
     target_path.append(current_target.copy())
     time_elapsed += dt
 
-print(f"\n✅ Simulation complete. Obstacle avoided {obstacle_hits} times.\n")
+print(f"\n Simulation complete. Obstacle avoided {obstacle_hits} times.\n")
 
 # ========== VISUALISATION ==========
 # Generate animation based on the selected mode
@@ -141,8 +141,8 @@ if MODE == "obstacle":
     # Check for any violations where EE entered the obstacle
     violating = np.linalg.norm(ee_np - obstacle_center, axis=1) < (obstacle_radius - 1e-6)
     if np.any(violating):
-        print(f"⚠️ {np.sum(violating)} points violated the obstacle boundary.")
-        plt.scatter(ee_np[violating, 0], ee_np[violating, 1], color='magenta', label="⚠️ Violations")
+        print(f"{np.sum(violating)} points violated the obstacle boundary.")
+        plt.scatter(ee_np[violating, 0], ee_np[violating, 1], color='magenta', label="Violations")
 
 plt.axis('equal')
 plt.legend()
