@@ -32,7 +32,7 @@ obstacle_center = np.array([2 * L, 0.5 * L])
 obstacle_radius = L / 8
 OBSTACLE_MARGIN = 0.03  # Safety margin around obstacle
 
-# Initialize data storage
+# Initialise data storage
 theta_history = [] # Joint angles over time
 obstacle_hits = 0 # Counter for obstacle avoidance
 obstacle_positions = [] # EE positions that triggered avoidance
