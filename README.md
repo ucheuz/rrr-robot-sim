@@ -39,10 +39,12 @@ pip install -r requirements.txt
 pip install numpy matplotlib
 ```
 
-### 4. Install ffmpeg (for saving .mp4 animations)
+### 4. Install ffmpeg (for saving .mp4)
 ```bash
 brew install ffmpeg    # macOS
 # or use apt / choco depending on your OS
+sudo apt update
+sudo apt install ffmpeg -y
 ```
 
 ### 5. Run the Simulation
@@ -132,6 +134,5 @@ Lower frequencies reduce smoothness but still maintain good tracking performance
 ---
 
 ## Author
-
 **Uchemudi Uzoka**  
 
