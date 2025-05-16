@@ -4,7 +4,7 @@ This project simulates a 3-joint planar robot arm (RRR manipulator) tracking a m
 
 ---
 
-## Project Overview
+# Project Overview
 
 The robot tracks a target that moves along a sine wave path. Joint angles are updated using inverse kinematics, and the robot's movement is visualised using Matplotlib. The simulation supports three modes:
 
@@ -14,15 +14,15 @@ The robot tracks a target that moves along a sine wave path. Joint angles are up
 
 ---
 
-## How to Set Up and Run
+# How to Set Up and Run
 
-### 1. Clone this repository and navigate to the directory:
+# 1. Clone this repository and navigate to the directory:
 
    ```bash
    git clone https://github.com/ucheuz/rrr-robot-sim.git
    cd rrr-robot-sim
 
-### 2. Create a Virtual Environment (recommended)
+# 2. Create a Virtual Environment (recommended)
 Open a terminal in the project folder and run:
 
 ```bash
@@ -30,14 +30,14 @@ python3 -m venv venv
 source venv/bin/activate        # For macOS/Linux
 venv\Scripts\activate.bat       # For Windows
 
-###  3. Install Required Packages
+# 3. Install Required Packages
 pip install -r requirements.txt
 brew install ffmpeg #For macOS
 #OR
 pip install numpy matplotlib
 brew install ffmpeg #For macOS
 
-### 4. Run the Simulation
+# 4. Run the Simulation
 Open main.py and set the mode at the top
 
 MODE = "task_a"       # Options: "task_a", "task_b", "obstacle"
@@ -45,7 +45,7 @@ MODE = "task_a"       # Options: "task_a", "task_b", "obstacle"
 Then run the script
 python main.py
 
-## How it Works
+# How it Works
 Inverse Kinematics (IK): Solved using gradient descent on Euclidean loss between EE and target.
 Forward Kinematics (FK): Sums vector links using joint angles.
 Obstacle Avoidance:
@@ -55,14 +55,14 @@ Obstacle Avoidance:
 Animation: Robot arm, EE, target, obstacle, and violations are shown over time.
 
 
-## Files
+# Files
 main.py — runs the simulation (edit here to choose the task)
 robot.py — contains kinematics and obstacle detection
 simulation.py — generates the sine wave target path
 visualise.py — animates the robot and plots static summaries
 robot_tracking.mp4 — optional animation output (if save=True in main.py)
 
-## System Requirements
+# System Requirements
 Python 3.8 or higher
 macOS, Linux, or Windows
 No GPU or special hardware needed
@@ -72,12 +72,12 @@ Libraries:
 numpy
 matplotlib
 
-## Notes
+# Notes
 The animation will display in a pop-up window. To save it to an .mp4 file, set save=True in the animate_tracking() call inside main.py.
 If the end-effector attempts to enter the obstacle, its motion is frozen and visualised as a break in the path.
 Violation points (if any) are shown in magenta.
 
-## Results
+# Results
 Task A – High Frequency Tracking
 Control loop: 1 kHz
 Target update rate: 30 Hz
@@ -96,5 +96,5 @@ With slower updates, both the target and the robot move in bigger jumps. The tra
 Takeaway:
 Reducing control and update frequency makes the motion less fluid but doesn't significantly affect tracking accuracy.
 
-## Author
-Uchemudi Uzoka
+# Contributors
+Uchemudi Uzoka - Author
