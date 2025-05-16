@@ -134,6 +134,7 @@ Lower frequencies reduce smoothness but still maintain good tracking performance
 
 **Observation**:  
 The robot almost always avoids the obstacle using rerouting or freezing, with a few trailing end effector lines. Path gaps and violation markers provide visual feedback of avoidance behaviour.
+
 ---
 
 ## Author
