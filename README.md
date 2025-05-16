@@ -107,6 +107,7 @@ The core idea was to simulate a 3-link planar robotic arm (RRR configuration) th
 - **Target updates**: 30 Hz  
 - **Final tracking error**: `0.0125`  
 - **Animation**: `robot_tracking_task_a.mp4`
+- **Static Plot**: `taska.png`
 
 **Observation**:  
 The robot follows the target smoothly and almost continuously. With high-frequency updates, there’s very little visible lag between the robot and the sine wave target.
@@ -118,6 +119,7 @@ The robot follows the target smoothly and almost continuously. With high-frequen
 - **Target updates**: 5 Hz  
 - **Final tracking error**: `0.0130`  
 - **Animation**: `robot_tracking_task_b.mp4`
+- **Static Plot**: `taskb.png`
 
 **Observation**:  
 With slower updates, movement appears more jumpy. The robot lags slightly behind the target, and the animation completes quicker due to fewer updates. Despite that, accuracy is only slightly worse.
@@ -131,6 +133,7 @@ Lower frequencies reduce smoothness but still maintain good tracking performance
 - **Target updates**: 30 Hz
 - **Final tracking error**: `0.1339`
 - **Animation**: `robot_tracking_obstacle.mp4`
+- **Static Plot**: `obstacle.png`
 
 **Observation**:  
 The robot almost always avoids the obstacle using rerouting or freezing, with a few trailing end effector lines. Path gaps and violation markers provide visual feedback of avoidance behaviour.
