@@ -76,7 +76,12 @@ python main.py
 - `robot.py` — Contains FK, IK, and obstacle logic
 - `simulation.py` — Generates sine wave target
 - `visualise.py` — Animates the robot and plots paths
-- `robot_tracking.mp4` — Output animation (if `save=True`)
+- `taska.png` -  Static visual of the result of the end effector path following the target path for Task A
+- `taskb.png` -  Static visual of the result of the end effector path following the target path for Task B
+- `obstacle.png` -  Static visual of the result of the end effector path following the target path with an obstacle margin and avoidance points
+- `robot_tracking_task_a.mp4` — Output animation for Task A (if `save=True`)
+- `robot_tracking_task_b.mp4` - Output animation for Task B (if `save=True`)
+- `robot_tracking_obstacle.mp4` - Output animation for Obstacle Task (if `save=True`)
 
 ---
 
